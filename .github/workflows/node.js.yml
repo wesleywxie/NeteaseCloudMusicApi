@@ -54,6 +54,7 @@ jobs:
     - name: Lint
       run: npm run lint
   docker:
+    name: Docker
     runs-on: ubuntu-latest
     steps:
       -
@@ -74,7 +75,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: user/app:latest
+          tags: summertse/netease-cloud-music-api:latest
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
